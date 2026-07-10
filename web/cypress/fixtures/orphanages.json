@@ -1,0 +1,22 @@
+{
+  "create": {
+    "name": "lar dos anjos",
+    "description": "instituição dedicada ao acolhimento de crianças em situação de vulnerabilidade, oferecendo suporte pedagógico, alimentação balanceada, atividades recreativas e cuidados médicos diários com muito carinho.",
+    "opening_hours": "segunda a sexta das 08h as 18h",
+    "open_on_weekends": "Não",
+    "position": {
+        "latitude": -7.0215,
+        "longitude": -37.2762
+    }
+  },
+  "other": {
+    "name": "orfanato caminho da luz",
+    "description": "espaço acolhedor focado no desenvolvimento integral de jovens através de oficinas de música, informática e artes, preparando-os para um futuro digno com apoio psicológico constante.",
+    "opening_hours": "dias uteis das 09h as 17h"
+  },
+  "other2": {
+    "name": "pequenos passos",
+    "description": "ambiente estruturado para o desenvolvimento infantil e fortalecimento de vínculos familiares, contando com uma equipe multidisciplinar comprometida em garantir todos os direitos fundamentais.",
+    "opening_hours": "todos os dias das 07:30 as 19:00"
+  }
+}

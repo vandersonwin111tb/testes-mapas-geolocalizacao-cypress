@@ -38,6 +38,12 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "cypress": "^15.18.1"
+    "@cypress/webpack-batteries-included-preprocessor": "^4.1.1",
+    "@cypress/webpack-preprocessor": "^7.1.1",
+    "@faker-js/faker": "^10.5.0",
+    "cypress": "^15.18.1",
+    "cypress-browser-permissions": "^1.1.0",
+    "cypress-mongodb": "^7.0.0",
+    "webpack": "^5.108.4"
   }
 }

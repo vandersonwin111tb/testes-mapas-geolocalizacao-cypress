@@ -1,0 +1,8 @@
+Aviso Importante:
+
+A integração com o mapa depende da API do serviço Open Street Map.
+ É possível que seu antivírus bloqueie esta função, no entanto,
+ queremos assegurar que a fonte é confiável. Durante os testes,
+ talvez seja necessário desativar temporariamente o antivírus
+ ou adicionar o site (https://www.openstreetmap.org) na
+ lista de links confiáveis para garantir o funcionamento correto.
