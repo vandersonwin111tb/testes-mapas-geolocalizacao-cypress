@@ -9,10 +9,15 @@
         "longitude": -37.2762
     }
   },
-  "other": {
+  "duplicate": {
     "name": "orfanato caminho da luz",
     "description": "espaço acolhedor focado no desenvolvimento integral de jovens através de oficinas de música, informática e artes, preparando-os para um futuro digno com apoio psicológico constante.",
-    "opening_hours": "dias uteis das 09h as 17h"
+    "opening_hours": "dias uteis das 09h as 17h",
+    "open_on_weekends": "Sim",
+    "position": {
+        "latitude": -7.037520074170621,
+        "longitude": -37.28004455566407
+    }
   },
   "other2": {
     "name": "pequenos passos",

@@ -1,43 +1,57 @@
 import data from '../fixtures/orphanages.json'
-// import { faker } from '@faker-js/faker'
+import createPage from '../support/pages/create'
+import mapPage from '../support/pages/map'
 
 describe('Cadastro de orfanatos', () => {
 
     it('Deve cadastrar um novo orfanato', () => {
-        // cy.visit('http://localhost:3000/orphanages/create')
-
-        cy.visit('http://localhost:3000/orphanages/create')
-
         const orphanage = data.create
 
         cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
 
-        cy.get('legend')
-            .should('be.visible')
-            .should('have.text', 'Cadastro')
-
+        createPage.go()
         cy.setMapPosition(orphanage.position)
+        createPage.form(orphanage)
+        createPage.submit()
 
-        // cy.get('input[name="name"]')
-        //     .type('Orfanato crinça feliz')
+        mapPage.popup.haveText('Orfanato cadastrado com sucesso.')
+    })
 
-        cy.get('input[name=name]')
-            .type(orphanage.name)
+    it('Não deve cadastrar orfanato quando o nome é duplicado', () => {
+        const orphanage = data.duplicate
 
-        cy.get('#description')
-            .type(orphanage.description)
+        cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
 
-        cy.get('input[type=file]')
-            .selectFile('cypress/fixtures/images/kids-playground-1.png', { force: true })
+        cy.postOrphanage(orphanage)
 
-        cy.get('#opening_hours')
-            .type(orphanage.opening_hours)
+        createPage.go()
+        cy.setMapPosition(orphanage.position)
+        createPage.form(orphanage)
+        createPage.submit()
 
-        cy.contains('button', orphanage.open_on_weekends).click()
+        createPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
+    })
+})
 
-        cy.get('.save-button').click()
+Cypress.Commands.add('postOrphanage', (orphanage) => {
 
+    const formData = new FormData();
+    formData.append('name', orphanage.name);
+    formData.append('description', orphanage.description);
+    formData.append('latitude', orphanage.position.latitude);
+    formData.append('longitude', orphanage.position.longitude);
+    formData.append('opening_hours', orphanage.opening_hours);
+    formData.append('open_on_weekends', true);
 
+    cy.request({
+        url: 'http://localhost:3333/orphanages',
+        method: 'POST',
+        headers: {
+            'content-type': 'multipart/form-data'
+        },
+        body: formData
+    }).then(response => {
+        expect(response.status).to.eq(201)
     })
 })
 
