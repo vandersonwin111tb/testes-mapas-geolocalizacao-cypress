@@ -7,7 +7,8 @@
     "position": {
         "latitude": -7.0215,
         "longitude": -37.2762
-    }
+    },
+    "image": "kids-playground-3.png"
   },
   "duplicate": {
     "name": "orfanato caminho da luz",
@@ -17,7 +18,8 @@
     "position": {
         "latitude": -7.037520074170621,
         "longitude": -37.28004455566407
-    }
+    },
+    "image": "kids-playground-11.png"
   },
   "other2": {
     "name": "pequenos passos",

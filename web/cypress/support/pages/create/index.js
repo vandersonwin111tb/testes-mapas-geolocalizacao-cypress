@@ -23,7 +23,7 @@ class CreatePage {
             .type(orphanage.description)
 
         cy.get('input[type=file]')
-            .selectFile('cypress/fixtures/images/kids-playground-1.png', { force: true })
+            .selectFile('cypress/fixtures/images/' + orphanage.image, { force: true })
 
         cy.get('#opening_hours')
             .type(orphanage.opening_hours)

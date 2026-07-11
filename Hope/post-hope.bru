@@ -1,0 +1,26 @@
+meta {
+  name: post-hope
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3333/orphanages
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  name: orfanato caminho da luz
+  description: espaço acolhedor focado no desenvolvimento integral de jovens através de oficinas de música, informática e artes, preparando-os para um futuro digno com apoio psicológico constante.
+  latitude: -7.0158828212672555
+  longitude: -37.289400100708015
+  opening_hours: dias uteis das 09h as 17h
+  open_on_weekend: true
+  images: @file(/home/francisco.vanderson/Documentos/projetos-2026/Udemy/cypress/cypress-xp/hope/web/cypress/fixtures/images/kids-playground-7.png)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
