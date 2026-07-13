@@ -21,9 +21,14 @@
     },
     "image": "kids-playground-11.png"
   },
-  "other2": {
+  "map": {
     "name": "pequenos passos",
     "description": "ambiente estruturado para o desenvolvimento infantil e fortalecimento de vínculos familiares, contando com uma equipe multidisciplinar comprometida em garantir todos os direitos fundamentais.",
-    "opening_hours": "todos os dias das 07:30 as 19:00"
+    "opening_hours": "todos os dias das 07:30 as 19:00",
+    "position": {
+      "latitude": -7.029768260775593,
+      "longitude": -37.284185886383064
+    },
+    "image": "kids-playground-8.png"
   }
 }
