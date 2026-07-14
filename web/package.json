@@ -44,6 +44,7 @@
     "cypress": "^15.18.1",
     "cypress-browser-permissions": "^1.1.0",
     "cypress-mongodb": "^7.0.0",
+    "dotenv": "^17.4.2",
     "webpack": "^5.108.4"
   }
 }

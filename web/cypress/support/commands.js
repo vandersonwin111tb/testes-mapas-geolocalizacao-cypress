@@ -24,6 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import './views/map'
+import './views/create'
+import './views/components'
+
 Cypress.Commands.add('postOrphanage', (orphanage) => {
     cy.fixture('images/' + orphanage.image, 'binary')
         .then((image) => Cypress.Blob.binaryStringToBlob(image, 'image/png'))
@@ -35,11 +39,11 @@ Cypress.Commands.add('postOrphanage', (orphanage) => {
             formData.append('latitude', orphanage.position.latitude);
             formData.append('longitude', orphanage.position.longitude);
             formData.append('opening_hours', orphanage.opening_hours);
-            formData.append('open_on_weekends', true);
+            formData.append('open_on_weekends', orphanage.open_on_weekends);
             formData.append('images', blob, orphanage.image)
 
             cy.request({
-                url: 'http://localhost:3333/orphanages',
+                url: Cypress.env('baseApi') + '/orphanages',
                 method: 'POST',
                 headers: {
                     'content-type': 'multipart/form-data'
